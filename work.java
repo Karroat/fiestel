@@ -1,3 +1,4 @@
+//workspace
 /*keys genarator*/
 import java.util.*;
 import java.lang.*;
