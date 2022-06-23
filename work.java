@@ -48,7 +48,7 @@ class Demo1 extends Code
 	}
 }
 
-/* akshit input code*/
+/* akshit input code
 class Test
 {
  public static void main(String args[])
@@ -71,7 +71,7 @@ class Test
 
 
 
-/* akshit input*/
+ //akshit input
 class Test
 {
  public static void main(String args[])
@@ -133,7 +133,7 @@ class Test
 
   }
 } 
-
+*/
 /*key generator*/
 import java.util.*;
 import java.io.*;
