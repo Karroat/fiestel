@@ -4,6 +4,8 @@ import java.lang.*;
 import java.io.*;
 import java.util.UUID;
 
+//Hey pentas 
+
 class Expo
 {
 public static int generateRandomDigits(int n) 
