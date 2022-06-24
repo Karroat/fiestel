@@ -28,9 +28,7 @@ System.out.println(generateRandomDigits(n));
 
 
 /*coverts decimal to binary*/
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+
 class Code
 {
 	static void decimalToBinary(int num)
@@ -136,8 +134,6 @@ class Test
 } 
 */
 /*key generator*/
-import java.util.*;
-import java.io.*;
 
 class Demo2
 {
@@ -154,8 +150,6 @@ public static void main(String args[])
 }
 
 /* encryption*/
-import java.util.*;
-import java.util.UUID;
 
 class Encryptioo
 {
