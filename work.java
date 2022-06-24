@@ -134,19 +134,21 @@ class Test
 } 
 */
 /*key generator*/
+import java.util.Random;
+import java.util.UUID;
 
-class Demo2
+class keys
 {
-public static void main(String args[])
-{
- string k[]= new string[100];
- string r[]= new string[100] {1,0,0,1,0,1}; 
- for(int i=1;i<=3;i++)
+ public static void main(String args[])
  {
- k[i] = srand()
- System.out.println(k[i]);
+  long k[]= new long[100];
+  //string r[]= new tring[100] {1,0,0,1,0,1}; 
+  for(int i=1;i<=5;i++)
+  {
+    k[i] = Math.abs(UUID.randomUUID().getMostSignificantBits());//srand();
+    System.out.println(k[i]);
+  }
  }
-}
 }
 
 /* encryption*/
