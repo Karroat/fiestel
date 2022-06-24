@@ -177,7 +177,7 @@ class Encryptioo
        for(int i=1;i<r.length;i++)
       {
 
-        system.out.print(logicalXOR(r[i],k[i]));
+        return logicalXOR(r[i],k[i]);
 
       }
    } 
