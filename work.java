@@ -150,8 +150,7 @@ class Test
   }
 }
 */
-
-
+	
 /*key generator
 import java.util.Random;
 import java.util.UUID;
@@ -301,14 +300,9 @@ public static void main(String args[])
 }
 }
 
-	
-	
-	
-	
-	'
-		
-		
-		
+
+
+
 		
 		
 		
@@ -332,3 +326,51 @@ class Demo20
         System.out.print(left+" "+right);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.UUID;
+
+class Expo
+{
+   public static void countDigit(int r)
+  {
+     int count = 0;
+     while (r != 0) {
+         r = r / 10;
+         ++count;
+     }
+     System.out.println(count);
+     r=count;
+     System.out.println(generateRandomDigits(r));
+  }
+public static int generateRandomDigits(int r) 
+{
+    int m = (int) Math.pow(10, r - 1);//math.pow(1arg,2arg) means 10 to the power of n-1//
+    return m + new Random().nextInt(9 * m);/*100000<=n<=900000*/ //means m is 10 to the power something//
+}
+}
+class Demo15 extends Expo
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);
+int n=s.nextInt();
+countDigit(n);
+}
+}
+*/
+	
