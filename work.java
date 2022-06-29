@@ -137,7 +137,7 @@ class Demo20
 
 
 
-/*
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -163,7 +163,7 @@ class keys
     int x = m + new Random().nextInt(9 * m);/*100000<=n<=900000*/ //means m is 10 to the power something//
     return x;
    }
-   for(
+   for()
 }
 class Demo15 extends Expo
 {
@@ -176,5 +176,6 @@ int n = 2;
 generateRandomDigits(n);
 }
 }
-*/
+
+
 	
