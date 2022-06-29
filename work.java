@@ -1,5 +1,6 @@
+
 //workspace
-/*keys genarator*/
+/*keys genarator
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -14,20 +15,21 @@ public static int generateRandomDigits(int n)
     int m = (int) Math.pow(10, n - 1);
     return m + new Random().nextInt(9 * m);/*100000<=n<=900000*/
 }
-}
-class Demo15 extends Expo
+}*/
+/*class Demo15 extends Expo
 {
 public static void main(String args[])
 {
 Scanner s=new Scanner(System.in);
 int n=s.nextInt();
 //int n = 10000 + s.(new Random().nextInt(90000));/*10000<=n<=90000*/
-System.out.println(generateRandomDigits(n));
+//System.out.println(generateRandomDigits(n));
 }
 }
+*/
 
 
-/*coverts decimal to binary*/
+/*coverts decimal to binary
 
 class Code
 {
@@ -69,7 +71,7 @@ class Test
 */
 
 
-/*key generator*/
+/*key generator
 import java.util.Random;
 import java.util.UUID;
 
@@ -87,7 +89,7 @@ class keys
  }
 }
 
-/* encryption*/
+/* encryption
 
 class Encryptioo
 {
@@ -122,7 +124,7 @@ class Encryptioo
 }  
 }
 
-	
+*/	
 	
 	
 	
@@ -158,7 +160,7 @@ public static void main(String args[])
        
      }
    System.out.println();
-   int k[]=new int[]{3,4,5,6,7,8,9};
+   int k[];
    int l[];
    int r[];
    //int temp[];
@@ -192,9 +194,13 @@ public static void main(String args[])
      r[j] = ascii[i];
     }
    }
+   for(int i=0;i<r.length();i++)
+   {
+    k[i] = Math.abs(UUID.randomUUID().getMostSignificantBits());
+   }
    int funct[] = new int[r.length];
    int temp[] = new int[r.length];
-     for(int j=0;j<r.length;j++) //exception
+     for(int j=0;j<k.length;j++) //exception
      {
         for (int i= 0,z=0; i<r.length && z<l.length; i++,z++)
        {
