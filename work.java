@@ -171,7 +171,25 @@ public static void main(String args[])
       
       System.out.println(l[j]+" "+r[i]);
      }
-       
+     char lo[] = new char[l.length];
+     char ro[] = new char[r.length];
+     char o[] = new char[l.length+r.length];
+     for(int j=0,z=0;j<l.length && z<r.length;j++,z++)
+     {
+      lo[j] = (char)l[j];
+      ro[z] = (char)r[z];
+     }
+     // using the pre-defined function arraycopy 
+
+        System.arraycopy(l, 0, o, 0, l.length); 
+
+        System.arraycopy(r, 0, o, l.length, r.length);
+
+        Arrays.toString(0);
+      for(int i=0;i<l.length+r.length;i++)
+      {
+      System.out.print(o[i]);
+      }
 
 }
 }
