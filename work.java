@@ -77,15 +77,17 @@ public static void main(String args[])
      r[j] = ascii[i];
     }
    }
-   k = new int[16];
-   for(int i=0;i<16;i++)
+   System.out.println("enter no of keys:");   
+   int nk = sc.nextInt();
+   k = new int[nk];
+   for(int i=0;i<nk;i++)
    {
       k[i] = h.generateRandomDigits(g); //Math.abs(UUID.randomUUID().getMostSignificantBits());
    }
    int funct[] = new int[r.length];
    int temp[] = new int[r.length];
             //System.out.println("l[]="+l+"r[]="+r);
-     for(int j=0;j<16;j++) //exception
+     for(int j=0;j<nk;j++) //exception
      {
         for (int i= 0,z=0; i<r.length && z<l.length; i++,z++)
        {
@@ -125,7 +127,7 @@ public static void main(String args[])
      {
       System.out.print(o[i]);
      }
-    
+     //Decryption(o);
      //}
 
 
@@ -185,7 +187,7 @@ public static void main(String args[])
    int dfunct[] = new int[dl.length];
    int dtemp[] = new int[dl.length];
 
-     for(int j=(16)-1;j>=0;j--)                                           //exception
+     for(int j=nk-1;j>=0;j--)                                           //exception
      {
         for (int i= 0,z=0; i<dr.length && z<dl.length; i++,z++)
        {
@@ -247,6 +249,10 @@ class keys
     return x;
    }
 }
+
+
+
+
 
 
 /*	
