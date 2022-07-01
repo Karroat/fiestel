@@ -10,6 +10,11 @@ public static void main(String args[])
    String s;
    Scanner sc = new Scanner(System.in);
    s=sc.nextLine();
+
+
+     
+
+
    /*int count=0;
    for(int i=0;i<s.length;i++)
    {
@@ -26,18 +31,36 @@ public static void main(String args[])
    {
     Decryption();
    }*/
-
+  
   // public void Encryption(String s)
   // {
+
+
+
+
+
    s=s.toUpperCase();
-   System.out.println(s);
+   int x=s.length();;
    int g=2;
+   char space =' ';
    keys h=new keys();
-   int x=s.length();
+   if(s.length()%2==0)
+   {
    System.out.println("String length:" + x);
-   int ascii[] = new int[s.length()]; 
+   System.out.println(s);
+   }
+   if(s.length()%2!=0)
+   {
+   s += space; 
+   x=s.length();
+   System.out.println("String length:" + x);
+   System.out.println(s);
+   }
+   int ascii[] = new int[s.length()];
+   System.out.print("ascii array: "); 
    for(int i=0;i<s.length();i++)
      {
+      
        ascii[i]= (int) s.charAt(i);
        System.out.print(ascii[i]+" ");
        
@@ -48,22 +71,30 @@ public static void main(String args[])
    int r[];
    //int temp[];
    //int funct[];
-   if(x%2==0)
-   {
+  // if(x%2==0)
+   //{
     int n=(int) x/2;
     l = new int[n];
     r = new int[n];
+    System.out.print("Left: ");
     for(int i=0;i<n;i++)
     {
      l[i] = ascii[i];
+     System.out.print(l[i]+" ");
     }
+     System.out.println();
+     System.out.print("Right: ");
     for(int i=n,j=0;i<x && j<n;i++,j++)
     {
      
      r[j] = ascii[i];
+     System.out.print(r[j]+" ");
     }
-   }
-   else
+     System.out.println();
+   //}
+
+//****************************
+  /* else
    {
     int m=(int) x/2;
     l = new int[m+1];
@@ -76,8 +107,10 @@ public static void main(String args[])
     {
      r[j] = ascii[i];
     }
-   }
-   System.out.println("enter no of keys:");   
+   } */
+
+//*****************************
+   System.out.println("Enter no. of keys: ");   
    int nk = sc.nextInt();
    k = new int[nk];
    for(int i=0;i<nk;i++)
@@ -86,26 +119,32 @@ public static void main(String args[])
    }
    int funct[] = new int[r.length];
    int temp[] = new int[r.length];
-            //System.out.println("l[]="+l+"r[]="+r);
+
      for(int j=0;j<nk;j++) //exception
      {
         for (int i= 0,z=0; i<r.length && z<l.length; i++,z++)
        {
-            System.out.println("before : l[]="+l[z]+"r[]="+r[i] + "k[]="+k[j]);
-            System.out.println((char)l[z]+""+(char)r[i]);
+            //System.out.println("before : l[]="+l[z]+"r[]="+r[i] + "k[]="+k[j]);
+           // System.out.println((char)l[z]+""+(char)r[i]);
             temp[i] = r[i];
             funct[i] =(int)(r[i]^k[j]);
             r[i]= (int)(l[z]^funct[i]);
             l[z]= temp[i];
-            System.out.println("after : l[]="+l[z]+"r[]="+r[i]);
-            System.out.println((char)l[z]+""+(char)r[i]);
+            //System.out.println("after : l[]="+l[z]+"r[]="+r[i]);
+            //System.out.println((char)l[z]+""+(char)r[i]);
        }
+       for (int i= 0,z=0; i<r.length && z<l.length; i++,z++)
+       {
+            System.out.print((char)l[z]+""+(char)r[i]);
+       } 
+      System.out.println();
      }
-     for(int i= 0,j=0; i<r.length && j<l.length; i++,j++)
+//**********
+   /*  for(int i= 0,j=0; i<r.length && j<l.length; i++,j++)
      {
-      
-      System.out.print(l[i]+" "+r[i]);
-     }
+      System.out.print(l[i]+" "+r[i]+" ");
+     }*/
+//**********
      char lo[] = new char[l.length];
      char ro[] = new char[r.length];
      char o[] = new char[l.length+r.length];
@@ -123,6 +162,7 @@ public static void main(String args[])
             o[l.length + i] = (char)r[i];
      }
      System.out.println();
+     System.out.print("Encrypted: ");
      for(int i=0;i<l.length+r.length;i++)
      {
       System.out.print(o[i]);
@@ -140,36 +180,43 @@ public static void main(String args[])
 
 
 
-
     // public void Decryption(string s)
      //{
      System.out.println("\n\n\n\t\t\t Decryption **************************");
      int dascii[] = new int[o.length]; 
-     for(int i=0;i<o.length-1;i++)
+     System.out.print("dascii array: "); 
+     for(int i=0;i<o.length;i++)
      {
        dascii[i]= (int) o[i];
-       System.out.print(dascii[i]);
+       System.out.print(dascii[i]+" ");
      }
      System.out.println();
      int dl[];
      int dr[];
      int e=o.length;
-     if(e%2==0)
-     {
+     //if(e%2==0)
+     //{
       int dn=(int) e/2;
       dl = new int[dn];
       dr = new int[dn];
+   System.out.print("dleft: "); 
       for(int i=0;i<dn;i++)
       {
        dl[i] = dascii[i];
+       System.out.print(dl[i]+" "); 
       }
+      System.out.println(); 
+   System.out.print("dright: "); 
       for(int i=dn,j=0;i<e && j<dn;i++,j++)
       {
      
        dr[j] = dascii[i];
+       System.out.print(dr[j]+" "); 
       }
-     }
-     else
+       System.out.println(); 
+     //}
+//****************************************************
+     /*else
      {
       int dm=(int) e/2;
       dl = new int[dm];
@@ -182,7 +229,8 @@ public static void main(String args[])
       {
        dr[j] = dascii[i];
       }
-     }
+     }*/
+//****************************************************
      
    int dfunct[] = new int[dl.length];
    int dtemp[] = new int[dl.length];
@@ -191,8 +239,8 @@ public static void main(String args[])
      {
         for (int i= 0,z=0; i<dr.length && z<dl.length; i++,z++)
        {
-	    System.out.println("before : l[]="+dl[z]+"r[]="+dr[i]+"k[]="+k[j]);
-            System.out.println((char)dl[z]+""+(char)dr[i]);
+	   // System.out.println("before : l[]="+dl[z]+"r[]="+dr[i]+"k[]="+k[j]);
+           // System.out.println((char)dl[z]+""+(char)dr[i]);
 
 
             dtemp[z] = dl[z];
@@ -201,17 +249,24 @@ public static void main(String args[])
             dr[i]= dtemp[z];
 
 
-            System.out.println("after : l[]="+dl[z]+"r[]="+dr[i]);
-
-            System.out.println((char)dl[z]+""+(char)dr[i]);
+           // System.out.println("after : l[]="+dl[z]+"r[]="+dr[i]);
+           // System.out.println((char)dl[z]+""+(char)dr[i]);
 
        }
+       for (int i= 0,z=0; i<dr.length && z<dl.length; i++,z++)
+       {
+        System.out.print((char)dl[z]+""+(char)dr[i]);
+       }
+      System.out.println();
      }
-     for(int i= 0,j=0; i<dr.length && j<dl.length; i++,j++)
+//*************
+     /*for(int i= 0,j=0; i<dr.length && j<dl.length; i++,j++)
      {
       
-      System.out.println(dl[j]+" "+dr[i]);
-     }
+      System.out.print(dl[j]+" "+dr[i]+" ");
+     }*/
+//*************
+     System.out.println(); 
      char dlo[] = new char[dl.length];
      char dro[] = new char[dr.length];
      char dou[] = new char[dl.length+dr.length];
@@ -228,11 +283,12 @@ public static void main(String args[])
      {        
             dou[dl.length + i] = (char)dr[i];
      }
+     System.out.print("Decrypted: ");
      for(int i=0;i<dl.length+dr.length;i++)
      {
       System.out.print(dou[i]);
      }
-
+    System.out.println();
     // }
 }
 }
@@ -249,166 +305,3 @@ class keys
     return x;
    }
 }
-
-
-
-
-
-
-/*	
-import java.util.*;
-import java.io.*;
-import java.lang.*;
-
-class Demo19 extends keys
-{
-public static void main(String args[])
-{  
-   String s;
-   Scanner sc = new Scanner(System.in);
-   s=sc.nextLine();
-   s=s.toUpperCase();
-   System.out.println(s);
-   int x=s.length();
-   int ascii[] = new int[s.length()]; 
-   for(int i=0;i<s.length();i++)
-     {
-       ascii[i]= (int) s.charAt(i);
-       System.out.print(ascii[i]);
-       
-     }
-   System.out.println();
-   //int k[];
-   int l[];
-   int r[];
-   //int temp[];
-   //int funct[];
-   if(x%2==0)
-   {
-    int n=(int) x/2;
-    l = new int[n];
-    r = new int[n];
-    for(int i=0;i<n;i++)
-    {
-     l[i] = ascii[i];
-    }
-    for(int i=n,j=0;i<x && j<n;i++,j++)
-    {
-     
-     r[j] = ascii[i];
-    }
-   }
-   else
-   {
-    int m=(int) x/2;
-    l = new int[m];
-    r = new int[m+1];
-    for(int i=0;i<m;i++)
-    {
-     l[i] = ascii[i];
-    }
-    for(int i=m-1,j=0;i<x && j<m;i++,j++)
-    {
-     r[j] = ascii[i];
-    }
-   }
-   //for(int i=0;i<r.length();i++)
-  // {
-   //   k[i] = Math.abs(UUID.randomUUID().getMostSignificantBits());
-   //}
-   int funct[] = new int[r.length];
-   int temp[] = new int[r.length];
-     for(int j=0;j<k.length;j++) //exception
-     {
-        for (int i= 0,z=0; i<r.length && z<l.length; i++,z++)
-       {
-            temp[i] = r[i];
-            funct[i] =(int)(r[i]^k[j]);
-            r[i]= (int)(l[z]^funct[i]);
-            l[z]= temp[i];
-       }
-     }
-     for(int i= 0,j=0; i<r.length && j<l.length; i++,j++)
-     {
-      
-      System.out.println(l[j]+" "+r[i]);
-     }
-     char lo[] = new char[l.length];
-     char ro[] = new char[r.length];
-     char o[] = new char[l.length+r.length];
-     for(int j=0,z=0;j<l.length && z<r.length;j++,z++)
-     {
-      lo[j] = (char)l[j];
-      ro[z] = (char)r[z];
-     }
-     // using the pre-defined function arraycopy 
-
-        System.arraycopy(l, 0, o, 0, l.length); 
-
-        System.arraycopy(r, 0, o, l.length, r.length);
-
-        Arrays.toString(0);
-      for(int i=0;i<l.length+r.length;i++)
-      {
-      System.out.print(o[i]);
-      }
-
-}
-}		
-class Demo20
-{
-  int temp;
-  public static void main(String args[])
- {
-        int k[] = new int[]{4,3};
-        int left = 111;
-        int right= 3;
-
-        for (int i=0,j=0;i<=2 && j<1;i++,j++)
-        {
-            int temp = left;
-            int funct =(left^k[i]);
-            left= (int)(right^funct);
-            right= temp;
-        }
-
-        System.out.print(left+" "+right);
-    }
-}
-
-
-class keys
-{
-   int n=2;
-   /*public static void countDigit(int r)
-   {
-     int count = 0;
-     while (r != 0) {
-         r = r / 10;
-         ++count;
-   }
-     System.out.println(count);
-     r=count;
-     System.out.println(generateRandomDigits(r));*/
-   
-  /* public static int generateRandomDigits(int r) 
-   {
-    int m = (int) Math.pow(10, r - 1);//math.pow(1arg,2arg) means 10 to the power of n-1//
-    int x = m + new Random().nextInt(9 * m);/*100000<=n<=900000*/ //means m is 10 to the power something//
-    //return x;
-   //}
-//}
-//class Demo15 extends Expo
-//{
-//public static void main(String args[])
-//{
-//Scanner s=new Scanner(System.in);
-//int n=s.nextInt();
-//int n = 2;
-//countDigit(n);
-//generateRandomDigits(n);
-//}
-//}
-
-*/
-	
