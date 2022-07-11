@@ -890,3 +890,50 @@ class keys
     return x;
    }
 }
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+import java.io.*;
+import java.lang.*;
+import java.util.UUID;
+
+public class BeepProducer {
+
+	public static void main(String[] args) throws FileNotFoundException,IOException
+      {
+       try 
+       {
+       FileReader fis = new FileReader("C:\\Users\\bhuva\\proj\\en.txt");
+       BufferedReader bis = new BufferedReader(fis);
+       String s = bis.readLine();
+       int x = s.length();
+      
+
+		//int beepCount = 10;
+		for (int i = 0; i < x ; ++i) 
+               {
+			System.out.println("Beep : " + i);
+			java.awt.Toolkit.getDefaultToolkit().beep();
+			try 
+                        {
+				Thread.sleep(1000);
+			} 
+                        catch (InterruptedException e)
+                        {
+                        
+			}
+		}
+        bis.close();
+        }
+        catch(FileNotFoundException e) {
+        }
+	} 
+} 
