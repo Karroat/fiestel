@@ -3,10 +3,13 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 import java.util.UUID;
+import java.io.FileReader;
+import java.io.FileReader.*;
+import javax.sound.sampled.*; 
 
-class enc
+class enc extends Soundl
 {
-public static void main(String args[]) throws FileNotFoundException,IOException,NullPointerException
+public static void main(String args[]) throws FileNotFoundException,IOException,NullPointerException,LineUnavailableException
 {  
    String s="";
    String s1="";
@@ -132,6 +135,7 @@ public static void main(String args[]) throws FileNotFoundException,IOException,
      }
      System.out.println();
      System.out.print("Encrypted: ");
+
      for(int i=0;i<l.length+r.length;i++)
      {
       System.out.print(o[i]);
@@ -149,10 +153,52 @@ public static void main(String args[]) throws FileNotFoundException,IOException,
     fWriter.write(o);
     fWriter.close();
     bru.close();
+  System.out.println();
+
+  Scanner sc=new Scanner(System.in);
+  int a = sc.nextInt();
+  if(a==113)
+  {
+   FileReader fis = new FileReader("D:\\project\\en.txt");
+   BufferedReader bis = new BufferedReader(fis);
+        String so = bis.readLine();
+        int f = so.length();
+        Soundl sou = new Soundl();
+           sou.tone(7000,440*f);
+
+        bis.close();
+  }
   
 }
 }
 
+class Soundl
+{
+   
+    public static float SAMPLE_RATE = 8000f;
+    public static void tone(int hz, int msecs) throws LineUnavailableException 
+    {
+        tone(hz, msecs, 1.0);
+    }
+
+    public static void tone(int hz, int msecs, double vol) throws LineUnavailableException 
+    {
+        byte[] buf = new byte[1];
+        AudioFormat af = new AudioFormat(SAMPLE_RATE,8,1,true,false);     
+        SourceDataLine sdl = AudioSystem.getSourceDataLine(af);
+        sdl.open(af);
+        sdl.start();
+        for (int i=0; i < msecs*8; i++)
+        {
+              double angle = i / (SAMPLE_RATE / hz) * 2.0 * Math.PI;
+              buf[0] = (byte)(Math.sin(angle) * 127.0 * vol);
+              sdl.write(buf,0,1);
+        }
+        sdl.drain();
+        sdl.stop();
+        sdl.close();
+     }
+}
 
 
 // ***************************************** DEC ***********************************************
