@@ -172,6 +172,7 @@ public static void main(String args[]) throws FileNotFoundException,IOException,
    new FileOutputStream("D:\\project\\en.txt").close();
   }
     FileWriter fWriter = new FileWriter("D:\\project\\en.txt");
+    fWriter.write("\n");
     fWriter.write(o);
     fWriter.close();
     bru.close();
