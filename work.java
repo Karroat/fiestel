@@ -1,3 +1,25 @@
+// ********************************** deco **********************
+
+import java.util.*;
+
+class deco
+{
+ public static void main(String args[])
+ {
+  char a = (char)5;//leaf
+  char b = (char)3;//heart
+  char c = (char)6;//spade
+  char d = (char)4;//dimond
+  System.out.println(" \n\n\n\t\t\t------------------------------------------------------------------ \n");
+    System.out.println(" \t\t\t"+a+"                   "+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+"                    "+a+" \n\n");
+    System.out.println(" \t\t\t"+a+" *****************      Feistel - P - Vol    *****************  "+a+" \n\n");
+    System.out.println(" \t\t\t"+a+"                   "+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+d+""+"                    "+a+" \n");
+    System.out.println(" \t\t\t------------------------------------------------------------------ \n\n\n");
+ }
+}
+
+
+
 // ******************************** ENC **********************************
 import java.util.*;
 import java.lang.*;
