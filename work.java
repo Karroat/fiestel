@@ -33,6 +33,8 @@ class enc extends Soundl
 {
 public static void main(String args[]) throws FileNotFoundException,IOException,NullPointerException,LineUnavailableException
 {  
+
+   System.out.println("\t\t*~*~*~*~*~*~*~*~*~*~ Encryption *~*~*~*~*~*~*~*~*~*~\n\n\n");
    String s="";
    String s1="";
 
@@ -184,7 +186,12 @@ public static void main(String args[]) throws FileNotFoundException,IOException,
   {
    FileReader fis = new FileReader("D:\\project\\en.txt");
    BufferedReader bis = new BufferedReader(fis);
-        String so = bis.readLine();
+   String sl="";
+   String so="";
+      while ((sl = bis.readLine())!= null)
+      {
+      so = so+sl; 
+      }
         int f = so.length();
         Soundl sou = new Soundl();
            sou.tone(7000,440*f);
@@ -223,7 +230,6 @@ class Soundl
      }
 }
 
-
 // ***************************************** DEC ***********************************************
 import java.util.*;
 import java.lang.*;
@@ -237,7 +243,7 @@ class dec
 {
 public static void main(String args[]) throws Exception
 {  
-   System.out.println("\n\n\n\t\t\t************************** Decryption **************************\n\n\n");
+   System.out.println("\t\t*~*~*~*~*~*~*~*~*~*~ Decryption *~*~*~*~*~*~*~*~*~*~\n\n\n");
    int nk = 1000; 
    int k[];
    k = new int[nk];
